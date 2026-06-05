@@ -21,10 +21,12 @@ const App = () => {
             <Gallery activeCategory={activeCategory} />
           </>
         } />
-        
+
         {/* Upload page */}
-        <Route path="/upload" element={<Upload />} />
-        
+        {import.meta.env.DEV && (
+          <Route path="/upload" element={<Upload />} />
+        )}
+
         {/* About page - create later */}
         <Route path="/about" element={
           <div style={{ padding: '4rem' }}>

@@ -20,7 +20,9 @@ const Menu = () => {
           <div className="menu-sidebar" onClick={(e) => e.stopPropagation()}>
             <nav className="menu-nav">
               <Link to="/" className="menu-link" onClick={toggleMenu}>Home</Link>
-              <Link to="/upload" className="menu-link" onClick={toggleMenu}>Upload</Link>
+              {import.meta.env.DEV && (
+                <Link to="/upload" className="menu-link" onClick={toggleMenu}>Upload</Link>
+              )}
               <Link to="/about" className="menu-link" onClick={toggleMenu}>About Me</Link>
             </nav>
           </div>
